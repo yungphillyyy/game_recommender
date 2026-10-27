@@ -1,2 +1,2 @@
-# game_recommender
-Interactive web-based game recommendation system built with Python, Machine Learning, and Streamlit.
+# Game Recommender
+Interactive web-based game recommendation system built with HTML.
