@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philip Andrew Susanto - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans selection:bg-blue-500 selection:text-white">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <span class="font-bold text-lg text-blue-600">Philip</span>
+            <nav class="hidden md:flex space-x-6 text-sm text-slate-600 font-medium">
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#experience" class="hover:text-blue-600 transition">Experience</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </nav>
+            <a href="mailto:yungphillyyy@gmail.com" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-blue-700 transition shadow-sm">Get in Touch</a>
+        </div>
+    </header>
+
+    <!-- Hero Section (Split Layout ala Matthew Vandersen) -->
+    <section class="pt-32 pb-20 px-6 max-w-6xl mx-auto min-h-[85vh] flex items-center">
+        <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+            <!-- Left: Intro & CTAs -->
+            <div class="flex flex-col items-start text-left">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 text-slate-900 leading-tight">
+                    Philip Andrew Susanto
+                </h1>
+                <p class="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+                    Undergraduate Computer Science student at Bina Nusantara University with a foundation in Software Engineering, Machine Learning, and Deep Learning. Experienced in high performance competitive environments as a professional esports athlete, demonstrating exceptional teamwork, problem-solving, and resilience under pressure.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition shadow-sm flex items-center gap-2">
+                        View projects <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                    <a href="mailto:yungphillyyy@gmail.com" class="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl hover:bg-slate-100 transition flex items-center gap-2 shadow-sm">
+                        Get in touch
+                    </a>
+                    <a href="https://github.com/yungphillyyy" target="_blank" class="bg-white border border-slate-300 text-slate-700 font-semibold px-6 py-3 rounded-xl hover:bg-slate-100 transition flex items-center gap-2 shadow-sm">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+            <!-- Right: Profile Card/Image -->
+            <div class="flex justify-center">
+                <div class="relative bg-gradient-to-tr from-blue-100 to-indigo-50 p-3 rounded-3xl shadow-xl border border-slate-200 w-full max-w-md aspect-[4/3] flex items-center justify-center overflow-hidden">
+                    <img src="profile.jpeg" alt="Philip Andrew Susanto" class="rounded-2xl object-cover w-full h-full" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Filter Pills -->
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                Projects
+            </h2>
+            <!-- Filter Pills -->
+            <div class="flex flex-wrap gap-2" id="filter-container">
+                <button onclick="filterProjects('all')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-slate-900 text-white transition shadow-sm">All</button>
+                <button onclick="filterProjects('fullstack')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">Full-Stack</button>
+                <button onclick="filterProjects('ai')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">AI & ML</button>
+                <button onclick="filterProjects('ux')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition">UX/UI</button>
+            </div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+            
+            <!-- Project Card 1: bfess.web.id -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="fullstack">
+                <div class="aspect-video w-full bg-slate-100 p-6 flex items-center justify-center border-b border-slate-200">
+                    <img src="bfess-logo.webp" alt="bfess.web.id Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">Full-Stack Platform</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">bfess.web.id</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        Anonymous student confession platform featuring brand identity, design concepts, 7-layer rate limiting, and Midtrans payment gateway.
+                    </p>
+                    <button onclick="openModal('modal-bfess')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 2: Fake Review Detector -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="ai">
+                <div class="aspect-video w-full bg-slate-900 p-6 flex items-center justify-center border-b border-slate-200">
+                   <img src="FakeReviewDetector.png" alt="Fake Review Detector Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-200">AI / NLP & Transformers</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">Fake Review Detector</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        NLP classification comparing classical ML and fine-tuned RoBERTa models across in-domain and cross-domain Yelp datasets.
+                    </p>
+                    <button onclick="openModal('modal-dl')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 3: Game Recommendation System -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="ai">
+                <div class="aspect-video w-full bg-slate-900 p-6 flex items-center justify-center border-b border-slate-200">
+                    <img src="PPT Machine Learning.png" alt="Game Recommendation System Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Machine Learning</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">Game Recommendation System</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        Content-based filtering recommendation system utilizing Cosine Similarity and exploratory data analysis on the vgsales dataset.
+                    </p>
+                    <button onclick="openModal('modal-game')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 4: BinFetch -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="fullstack">
+                <div class="aspect-video w-full bg-emerald-900 p-6 flex items-center justify-center border-b border-slate-200">
+                    <img src="BinFetch.png" alt="BinFetch Waste Logistics Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Full-Stack & Green Tech</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">BinFetch Waste Logistics</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                       An on-demand, reward-based digital waste pickup platform designed to support smart waste management.
+                    </p>
+                    <button onclick="openModal('modal-binfetch')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 5: Deteksi Tuberkulosis X-Ray -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="ai">
+                <div class="aspect-video w-full bg-slate-900 p-6 flex items-center justify-center border-b border-slate-200">
+                    <img src="tb-demo.png" alt="Deteksi Tuberkulosis Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-red-50 text-red-600 border border-red-200">Deep Learning & MedTech</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">Deteksi Tuberkulosis X-Ray</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        A deep learning-based tuberculosis (TB) detection system using MobileNetV2 and Transfer Learning with an interactive Streamlit dashboard.
+                    </p>
+                    <button onclick="openModal('modal-tb')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Project Card 6: My WULING+ Redesign -->
+            <div class="project-card bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm" data-category="ux">
+                <div class="aspect-video w-full bg-slate-900 p-6 flex items-center justify-center border-b border-slate-200">
+                    <img src="MyWuling.png" alt="MyWuling Logo" class="max-h-full max-w-full object-contain">
+                </div>
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">UX/UI Case Study</span>
+                    <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">My WULING+ Redesign</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        Redesigning the My Wuling+ app using Heuristic Evaluation to optimize the homepage, real-time vehicle status tracking, and service booking experience.
+                    </p>
+                    <button onclick="openModal('modal-wuling')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
+        <div class="mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 flex items-center gap-3">
+                <i class="fa-solid fa-layer-group text-blue-600"></i> Skills & Technologies
+            </h2>
+            <p class="text-slate-600 text-sm mt-2">Technical stack, development tools, and core interpersonal competencies.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Category 1: Programming & Web -->
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-blue-300 transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Programming & Web</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Python</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">C</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">HTML</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">CSS</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Object-Oriented Programming (OOP)</span>
+                </div>
+            </div>
+
+            <!-- Category 2: Frameworks & Libraries -->
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-blue-300 transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center border border-indigo-100">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Frameworks & Libraries</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Streamlit</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Machine Learning & Deep Learning Basics</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Transfer Learning</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">CNN</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">NLP</span>
+                </div>
+            </div>
+
+            <!-- Category 3: Tools & Platforms -->
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-blue-300 transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-100">
+                        <i class="fa-solid fa-wrench"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Tools & Platforms</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Git</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">GitHub</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">VS Code</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Google Colab</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Vercel</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Android Studio</span>
+                </div>
+            </div>
+
+            <!-- Category 4: Soft Skills -->
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm hover:border-blue-300 transition">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center border border-amber-100">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900">Soft Skills</h3>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Communication</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Teamwork & Collaboration</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Problem-Solving</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Working Under Pressure</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Time Management</span>
+                    <span class="px-3 py-1.5 bg-slate-50 text-slate-700 border border-slate-200 rounded-lg text-xs font-medium">Adaptability</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section (Diubah menjadi Card Grid ala Proyek) -->
+    <section id="experience" class="py-20 px-6 max-w-6xl mx-auto border-t border-slate-200">
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 flex items-center gap-3 text-slate-900">
+            <i class="fa-solid fa-trophy text-blue-600"></i> Experience
+        </h2>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- CODM Esports Card -->
+            <div class="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:border-blue-300 transition flex flex-col justify-between shadow-sm">
+                <div class="aspect-video w-full bg-slate-900 p-6 flex items-center justify-center border-b border-slate-200 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-900/80 to-slate-900/90 flex items-center justify-center p-4">
+                        <div class="text-center">
+                            <i class="fa-solid fa-gamepad text-4xl text-blue-400 mb-2"></i>
+                            <p class="text-white font-bold text-lg">CODM Pro Esports Athlete</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-6">
+                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">Professional Esports</span>
+                    <h3 class="text-xl font-bold mt-3 text-slate-900">Call of Duty: Mobile Career</h3>
+                    <p class="text-slate-600 text-sm mt-2 line-clamp-2">
+                        Professional esports athlete competing in Indonesia across major teams like Rejects (Current), FORTH, ABC Esports, and Kazoku Esports.
+                    </p>
+                    <button onclick="openModal('modal-codm')" class="text-blue-600 font-semibold text-sm hover:text-blue-700 transition flex items-center gap-2 mt-4">
+                        View details <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section (Let's Connect ala Matthew Vandersen) -->
+    <section id="contact" class="py-20 px-6 max-w-5xl mx-auto border-t border-slate-200">
+        <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-3">Let's Connect</h2>
+        <p class="text-slate-600 text-base mb-10">Feel free to reach out about projects, collaborations or opportunities :D</p>
+        
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Email</span>
+                <a href="mailto:yungphillyyy@gmail.com" class="text-slate-900 font-medium text-sm hover:text-blue-600 transition break-all">yungphillyyy@gmail.com</a>
+            </div>
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">Phone</span>
+                <span class="text-slate-900 font-medium text-sm">(+62) 812-1865-8810</span>
+            </div>
+            <div class="bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider block mb-2">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/philip-andrew-susanto-506342445" target="_blank" class="text-slate-900 font-medium text-sm hover:text-blue-600 transition truncate block">linkedin.com/in/philip-andrew-susanto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUPS -->
+    <!-- MODAL POPUP: bfess.web.id -->
+    <div id="modal-bfess" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-bfess')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">Full-Stack Production Platform</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">bfess.web.id</h2>
+            <p class="text-slate-600 text-sm mb-6">Anonymous Student Menfess Feed, Brand Identity & Design Concept, & Midtrans Monetization Engine.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">A zero-trust anonymous student confession platform featuring auto-generated pseudonyms, multi-image client-side compression, and secure Instagram carousel export tools.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Impacts</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Students can send anonymous confessions safely without worrying about identity leaks (doxxing), and easily self-promote campus events or businesses via instant QRIS payment.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://bfess.web.id" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition text-sm flex items-center gap-2 shadow-sm">
+                    Visit Live Site <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: Fake Review Detector -->
+    <div id="modal-dl" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-dl')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-200">AI / NLP & Transformers</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">Fake Review Detector (RoBERTa & ML)</h2>
+            <p class="text-slate-600 text-sm mb-6">Comparative NLP study evaluating classical ML models against fine-tuned RoBERTa for fake review detection.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Analyzed and classified deceptive hotel and restaurant reviews using the Deceptive Opinion Spam Corpus and Yelp datasets, deploying the best pipeline to a real-time Streamlit web app.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Impacts</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">This project has a significant impact on e-commerce users by protecting them from market manipulation and fake review scams that often mislead shopping decisions.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://aol-nlp-fake-review-detector.streamlit.app/" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition text-sm flex items-center gap-2 shadow-sm">
+                    View Live App <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+                <a href="https://github.com/ArtikaNethania/AoL-NLP-fake-review-detector" target="_blank" class="bg-slate-100 text-slate-700 font-semibold px-5 py-2.5 rounded-xl hover:bg-slate-200 transition text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: Game Recommendation System -->
+    <div id="modal-game" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-game')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Machine Learning</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">Game Recommendation System</h2>
+            <p class="text-slate-600 text-sm mb-6">Content-based filtering system using Cosine Similarity on the video game sales dataset.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Building a content-based game recommendation system (content-based filtering) using the Cosine Similarity metric on a game sales dataset.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Impacts</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Helping gamers and content creators explore thousands of new, relevant game titles.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://gamerecommender-8qrkrckhpqe23neepyqnwh.streamlit.app/" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition text-sm flex items-center gap-2 shadow-sm">
+                    View Live App <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+                <a href="https://github.com/yungphillyyy/game_recommender.git" target="_blank" class="bg-slate-100 text-slate-700 font-semibold px-5 py-2.5 rounded-xl hover:bg-slate-200 transition text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: BinFetch -->
+    <div id="modal-binfetch" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-binfetch')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200">Full-Stack & Green Tech</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">BinFetch Waste Logistics Platform</h2>
+            <p class="text-slate-600 text-sm mb-6">Digital on-demand waste pickup platform with reward system to support smart waste management.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">An on-demand, web-based platform that connects users with waste collectors in real-time.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Impacts</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Providing flexible waste disposal solutions, converting recyclable waste into economic incentives.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://github.com/CladioRheynaldi/BinFetch.git" target="_blank" class="bg-slate-100 text-slate-700 font-semibold px-5 py-2.5 rounded-xl hover:bg-slate-200 transition text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: Deteksi Tuberkulosis X-Ray -->
+    <div id="modal-tb" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-tb')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-red-50 text-red-600 border border-red-200">Deep Learning & MedTech</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">Chest X-Ray-Based Tuberculosis Detection Using Deep Learning</h2>
+            <p class="text-slate-600 text-sm mb-6">Automated chest X-ray classification system using MobileNetV2 and Transfer Learning.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Developing a MobileNetV2-based deep learning model using transfer learning for binary TB and Non-TB classification.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Impacts</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Providing a foundational basis for a clinical decision support system for rapid and accurate early tuberculosis screening.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://tb-demo-6fe6krnrkm6zs8jemcwjwy.streamlit.app/" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition text-sm flex items-center gap-2 shadow-sm">
+                    Visit Site  <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+                <a href="https://github.com/yungphillyyy/tb-demo.git" target="_blank" class="bg-slate-100 text-slate-700 font-semibold px-5 py-2.5 rounded-xl hover:bg-slate-200 transition text-sm flex items-center gap-2">
+                    <i class="fa-brands fa-github"></i> GitHub Repo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: My WULING+ Redesign -->
+    <div id="modal-wuling" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-wuling')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">UX/UI Case Study</span>
+            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 border border-slate-200">Group Project</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">My WULING+ Mobile App Redesign</h2>
+            <p class="text-slate-600 text-sm mb-6">My Wuling+ App Usability Improvement Case Study Based on Nielsen's Golden Rules and Heuristic Evaluation.</p>
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Project Description</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Addressing the original app's issues of excessive advertisements on the homepage and insufficient vehicle status information.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Team & Impact</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">Group project in collaboration with Matthew Vandersen, Anselmus Levin Lukman, Samuel Teguh, Philip Andrew Susanto, and Shendrian Kimisulim.</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200">
+                <a href="https://my-wuling-revised-klmpk5.netlify.app/" target="_blank" class="bg-blue-600 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-blue-700 transition text-sm flex items-center gap-2 shadow-sm">
+                    View Prototype <i class="fa-solid fa-external-link-alt text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL POPUP: CODM Esports Career -->
+    <div id="modal-codm" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-6 md:p-8 relative max-h-[90vh] overflow-y-auto shadow-xl">
+            <button onclick="closeModal('modal-codm')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-lg"><i class="fa-solid fa-xmark"></i></button>
+            
+            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-blue-50 text-blue-600 border border-blue-200">Esports Athlete & Competitive Gaming</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-3 mb-2">Call of Duty: Mobile Professional Career</h2>
+            <p class="text-slate-600 text-sm mb-6">Competitive journey as a professional esports athlete in the Indonesian national esports scene.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4 mb-6 text-sm">
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Teams & Roles</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        • <strong>Current Team:<br></strong> Rejects (RJX)<br>
+                        • <strong>Former Teams:<br></strong> FORTH, ABC Esports, Kazoku Esports<br>
+                        • <strong>Highest Achievement: <br>
+                        </strong> Major Series S12 🥈 & GSI 2026 — 4th 🏅.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-blue-600 mb-1">Skills & Execution</h4>
+                    <p class="text-slate-700 text-xs leading-relaxed">
+                        As a professional Call of Duty: Mobile esports athlete competing on the national stage with Rejects, FORTH, ABC Esports, and Kazoku Esports, I have honed highly transferable skills relevant to the professional workplace—such as high-level tactical communication under extreme pressure, disciplined time management balancing university coursework with rigorous scrim and tournament schedules, and rapid adaptability to dynamic team environments. This experience has cultivated mental composure, work discipline, and instant problem-solving acuity—essential qualities that I consistently apply to team collaboration and software engineering project development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 pt-4 border-t border-slate-200 text-xs text-slate-500">
+                <span><i class="fa-solid fa-calendar-alt mr-1"></i> 2022 – Present</span>
+                <span><i class="fa-solid fa-location-dot mr-1"></i> Indonesia</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-10 text-center border-t border-slate-200 text-slate-500 text-sm bg-white">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>© 2026 Philip Andrew Susanto.</p>
+            <a href="#projects" class="text-xs hover:text-blue-600 transition flex items-center gap-1">Back to top <i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Modals & Project Filtering -->
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('fixed')) {
+                event.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                if(btn.textContent.toLowerCase().includes(category) || (category === 'all' && btn.textContent === 'All')) {
+                    btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-slate-900 text-white transition shadow-sm";
+                } else {
+                    btn.className = "filter-btn px-4 py-2 rounded-full text-sm font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 transition";
+                }
+            });
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
